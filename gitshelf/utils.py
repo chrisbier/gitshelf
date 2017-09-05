@@ -14,8 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from urlparse import urlparse, parse_qsl
-from urllib import unquote_plus
+from urllib.parse import urlparse, parse_qsl, unquote_plus
 
 def get_item_properties(item, fields, mixed_case_fields=[], formatters={}):
     """Return a tuple containing the item properties.
