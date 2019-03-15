@@ -35,7 +35,8 @@ class Book:
             branch -- branch/sha1/tag to be used in the checkout, defaults to master
             link -- destination of the link target
             skiprepourlcheck -- flag to skip that the git url matches the definition during status checks
-            fakeroot -- a gitshelf may specify absolute paths, setting fakeroot allows you to make an absolute path relative to the passed path
+            fakeroot -- a gitshelf may specify absolute paths, setting fakeroot allows you to make an
+                        absolute path relative to the passed path
 
     """
 
@@ -235,7 +236,7 @@ class Book:
                 cwd = os.getcwd()
                 os.chdir(self.path)
                 LOG.info("# book {0}".format(self.path))
-                git_diff = git.diff()
+                git_diff = git.diff(exit_code=True)
                 if git_diff:
                     LOG.info("# book {0} had changes:".format(self.path))
                     LOG.info(git_diff)
